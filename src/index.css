@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  --pattern-color: #353535;
+}
+
+html {
+  background-color: #0f0f0f;
+}
+
+.main-bg {
+  background: 
+    /* horizontal and vertical lines */ conic-gradient(
+        from 90deg at 1px 1px,
+        #0000 25%,
+        var(--pattern-color) 0%
+      )
+      -0.5px -0.5px / 1em 1em,
+    /* main diagonal */
+      linear-gradient(
+        45deg,
+        #0000 calc(50% + -0.5px),
+        var(--pattern-color) 0 calc(50% + 0.5px),
+        #0000 0
+      )
+      0 0 / 2em 2em,
+    /* secondary diagonal */
+      linear-gradient(
+        -45deg,
+        #0000 calc(50% + -0.5px),
+        var(--pattern-color) 0 calc(50% + 0.5px),
+        #0000 0
+      )
+      0 0 / 2em 2em;
+}
