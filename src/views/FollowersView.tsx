@@ -100,7 +100,7 @@ function FollowersView() {
   return (
     <main className="flex p-8 main-bg flex-col items-center bg-[#0f0f0f] sm:h-screen h-full w-screen">
       <ToastContainer stacked position="bottom-right"/>
-      <div className="px-10 h-full w-full flex flex-col items-center justify-center opacity-90 bg-[#2c2c2c]">
+      <div className="px-10 py-0 sm:py-10 h-full w-full flex flex-col items-center justify-center opacity-90 bg-[#2c2c2c]">
         <div className="w-full flex flex-col items-start mb-5 justify-center mt-14 sm:mt-0">
           <h1 className="text-white text-2xl mb-2">Comparador de seguidores</h1>
           <h2 className="text-white">Detecta quien te dejo de seguir, no sos fan de nadie</h2>
