@@ -98,13 +98,14 @@ function FollowersView() {
   });
 
   return (
-    <main className="flex p-8 main-bg flex-col items-center bg-[#0f0f0f] h-screen w-screen">
+    <main className="flex p-8 main-bg flex-col items-center bg-[#0f0f0f] sm:h-screen h-full w-screen">
       <ToastContainer stacked position="bottom-right"/>
-      <div className="p-10 h-full w-full flex flex-col items-center justify-center opacity-90 bg-[#2c2c2c]">
-        <div className="w-full flex flex-col items-start mb-5 justify-center">
+      <div className="px-10 h-full w-full flex flex-col items-center justify-center opacity-90 bg-[#2c2c2c]">
+        <div className="w-full flex flex-col items-start mb-5 justify-center mt-14 sm:mt-0">
           <h1 className="text-white text-2xl mb-2">Comparador de seguidores</h1>
           <h2 className="text-white">Detecta quien te dejo de seguir, no sos fan de nadie</h2>
-          <h2 className="text-white">Pasos para descargar los datos:</h2>
+          <h2 className="text-white">Pasos para descargar los datos: Configuración {">"} Tu actividad {">"} Descargar tu información {">"} Descargar o transferir información {">"} Instagram {">"} Parte de tu información {">"} Seguidores y seguidos {">"} Descargar en dispositivo {">"} Intervalo de fechas {"(modificar)"} {">"} Formato {">"} JSON {">"} Crear archivos </h2>
+          <h2 className="text-white">Esperar a que se descarguen y los subis aca</h2>
         </div>
         <form
           onSubmit={submitForm}
@@ -118,7 +119,7 @@ function FollowersView() {
               <input {...getInputFollowersProps()} />
               {followersFileName ? (
                 <div className="flex flex-col items-center justify-center">
-                  <img src={fileSvg} alt="file" className="w-28 h-28 mb-5" />
+                  <img src={fileSvg} alt="file" className="w-20 sm:w-28 h-20 sm:h-28 mb-5" />
                   {followersFileName}
                 </div>
               ) : isDragActiveFollowers ? (
@@ -135,7 +136,7 @@ function FollowersView() {
               <h1 className="text-white">
                 {followingFileName ? (
                   <div className="flex flex-col items-center justify-center">
-                    <img src={fileSvg} alt="file" className="w-28 h-28 mb-5" />
+                    <img src={fileSvg} alt="file" className="w-20 sm:w-28 h-20 sm:h-28 mb-5" />
                     {followingFileName}
                   </div>
                 ) : isDragActiveFollowing ? (
