@@ -4,8 +4,19 @@ const diffFunction = (followersData: FollowersType["data"], followingData: Follo
   const formattedFollowing = Object.values(followingData)[0];
 
   const followersResult = Object.values(followersData).map(
-    (follow) => follow.string_list_data[0].value
+    (follow) =>  {
+      if (typeof follow !== "string" ) {
+        if (Array.isArray(follow)) {
+          return 
+        } else {
+          return follow["string_list_data"][0]["value"];
+        }
+      }
+      return follow;
+    }
   );
+
+  console.log(followersResult)
 
   const result = Object.values(formattedFollowing)
     .filter((follow) => {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import diffFunction from "../diffFunction";
 import { FollowersType, FollowingType } from "../types/types.d";
@@ -60,7 +60,7 @@ function FollowersView() {
       if (acceptedFiles.length > 0) {
         reader.readAsText(acceptedFiles[0]);
       }
-    }, []),
+    }, [setFollowersData, setFollowersFileName]),
   });
 
   const {
@@ -94,7 +94,7 @@ function FollowersView() {
       if (acceptedFiles.length > 0) {
         reader.readAsText(acceptedFiles[0]);
       }
-    }, []),
+    }, [setFollowingData, setFollowingFileName]),
   });
 
   return (
@@ -146,13 +146,8 @@ function FollowersView() {
               </h1>
             </div>
           </div>
-            {/* <div className="bg-[#242424] min-w-2/3 p-3 max-w-2/3 min-h-[300px] max-h-[300px] overflow-y-scroll">
-              {["ejemplo", "ejemplo2", "ejemplo3", "adasd","ejemplo", "ejemplo2", "ejemplo3", "adasd","ejemplo", "ejemplo2", "ejemplo3", "adasd"].map((follower) => (
-                <h3 key={follower}>{follower}</h3>
-              ))}
-            </div> */}
-            <div className={`${result.length === 0 ? "hidden" : ""} bg-[#242424] min-w-2/3 p-3 max-w-2/3 min-h-[300px] max-h-[300px] overflow-y-scroll`}>
-              {result?.join(" ")}
+            <div className={`${result.length === 0 ? "hidden" : ""} bg-[#242424] min-w-2/3 p-5 max-w-2/3 min-h-[300px] max-h-[300px] overflow-y-scroll whitespace-pre-wrap`}>
+              {result?.join("   ")}
             </div>
           <div className="m-10 gap-5 w-full flex items-center justify-center">
             <button className="px-5 py-2 rounded bg-neutral-600 cursor-pointer">
