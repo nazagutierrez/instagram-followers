@@ -16,18 +16,19 @@ const diffFunction = (followersData: FollowersType["data"], followingData: Follo
     }
   );
 
-  console.log(followersResult)
-
+  console.log("followersResult", followersResult);
+  console.log("formattedFollowing", formattedFollowing);
   const result = Object.values(formattedFollowing)
     .filter((follow) => {
-      if (followersResult.includes(follow.string_list_data[0].value)) {
+      if (followersResult.includes(follow.title)) {
         return;
       } else {
-        return follow.string_list_data[0].value;
+        return follow.title;
       }
     })
-    .map((follow) => follow.string_list_data[0].value);
+    .map((follow) => follow.title);
 
+    console.log("result", result);
   return result
 };
 
